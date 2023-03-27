@@ -42,8 +42,14 @@ button:hover:before {
 }
 
 .card-grid {
-  margin-top: 40px;
+  margin: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
+  padding-left: 20px;
+}
+
+.turns {
+  font-size: 24px;
+  font-weight: bold;
 }
