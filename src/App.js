@@ -23,6 +23,8 @@ function App() {
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
 
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -30,19 +32,25 @@ function App() {
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
+  const allPairsFound = () => {
+    const matchedCards = cards.filter((card) => card.matched);
+    return matchedCards.length === cardImages.length * 2;
+  };
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => {
-          return prevCards.map((card) => {
+          const updatedCards = prevCards.map((card) => {
             if (card.src === choiceOne.src) {
               return { ...card, matched: true };
             } else {
               return card;
             }
           });
+
+          return updatedCards;
         });
         resetTurn();
       } else {
@@ -51,14 +59,16 @@ function App() {
     }
   }, [choiceOne, choiceTwo]);
 
-  console.log(cards);
-
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prevTurn) => prevTurn + 1);
     setDisabled(false);
   };
+
+  useEffect(() => {
+    shuffleCards();
+  }, []);
 
   return (
     <div className="App">
@@ -76,6 +86,8 @@ function App() {
           />
         ))}
       </div>
+      <p className="turns">Turns: {turns}</p>
+      {allPairsFound() && <p>Congratulations! You Found All Pairs!</p>}
     </div>
   );
 }
