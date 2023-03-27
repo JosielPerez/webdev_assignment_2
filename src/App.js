@@ -3,12 +3,12 @@ import "./App.css";
 import SCard from "./components/SCard";
 
 const cardImages = [
-  { "src": "/images/biggrin.png", matched: false},
-  { "src": "/images/blackout.png", matched: false},
-  { "src": "/images/frost.png", matched: false},
-  { "src": "/images/metal-facemask.png", matched: false},
-  { "src": "/images/punisher.png", matched: false},
-  { "src": "/images/whiteout.png", matched: false},
+  { src: "/images/biggrin.png", matched: false },
+  { src: "/images/blackout.png", matched: false },
+  { src: "/images/frost.png", matched: false },
+  { src: "/images/metal-facemask.png", matched: false },
+  { src: "/images/punisher.png", matched: false },
+  { src: "/images/whiteout.png", matched: false },
 ];
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
   const [turns, setTurns] = useState([]);
   const [choiceOne, setChoiceOne] = useState([null]);
   const [choiceTwo, setChoiceTwo] = useState([null]);
+  const [disabled, setDisabled] = useState(false);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -32,31 +33,31 @@ function App() {
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+      setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
-        setCards(prevCards => {
-          return prevCards.map(card => {
-            if(card.src === choiceOne.src){
-              return {...card, matched: true};
-            }
-            else{
+        setCards((prevCards) => {
+          return prevCards.map((card) => {
+            if (card.src === choiceOne.src) {
+              return { ...card, matched: true };
+            } else {
               return card;
             }
-          })
-        })
+          });
+        });
         resetTurn();
-      } 
-      else {
-        setTimeout(() => resetTurn(), 1000)
+      } else {
+        setTimeout(() => resetTurn(), 1000);
       }
     }
-  }, [choiceOne, choiceTwo])
+  }, [choiceOne, choiceTwo]);
 
-  console.log(cards)
+  console.log(cards);
 
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prevTurn) => prevTurn + 1);
+    setDisabled(false);
   };
 
   return (
@@ -66,7 +67,13 @@ function App() {
 
       <div className="card-grid">
         {cards.map((card) => (
-          <SCard key={card.id} card={card} handleChoice={handleChoice} flipped={card === choiceOne || card === choiceTwo || card.matched} />
+          <SCard
+            key={card.id}
+            card={card}
+            handleChoice={handleChoice}
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+            disabled={disabled}
+          />
         ))}
       </div>
     </div>

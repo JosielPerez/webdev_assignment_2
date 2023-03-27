@@ -1,8 +1,10 @@
 import "./SCard.css";
 
-export default function SCard({ card, handleChoice, flipped }) {
+export default function SCard({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
-    handleChoice(card);
+    if (!disabled) {
+      handleChoice(card);
+    }
   };
   return (
     <div className="card">
