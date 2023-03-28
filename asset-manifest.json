@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/webdev_assignment_2/static/css/main.2333d2f5.css",
+    "main.js": "/webdev_assignment_2/static/js/main.e3bea7fc.js",
+    "index.html": "/webdev_assignment_2/index.html",
+    "main.2333d2f5.css.map": "/webdev_assignment_2/static/css/main.2333d2f5.css.map",
+    "main.e3bea7fc.js.map": "/webdev_assignment_2/static/js/main.e3bea7fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2333d2f5.css",
+    "static/js/main.e3bea7fc.js"
+  ]
+}
