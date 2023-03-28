@@ -1,13 +1,19 @@
 {
   "files": {
     "main.css": "/webdev_assignment_2/static/css/main.2333d2f5.css",
-    "main.js": "/webdev_assignment_2/static/js/main.e3bea7fc.js",
+    "main.js": "/webdev_assignment_2/static/js/main.57ef06f5.js",
+    "static/media/blackout.png": "/webdev_assignment_2/static/media/blackout.f0f6e0fec78ba2470d7e.png",
+    "static/media/metal-facemask.png": "/webdev_assignment_2/static/media/metal-facemask.6d68ea57a5e5d4a537e6.png",
+    "static/media/frost.png": "/webdev_assignment_2/static/media/frost.d4bd0e127a2bece9e992.png",
+    "static/media/punisher.png": "/webdev_assignment_2/static/media/punisher.2777ae5917abcb9b20d8.png",
+    "static/media/whiteout.png": "/webdev_assignment_2/static/media/whiteout.13ce59e323cca49dc04c.png",
+    "static/media/biggrin.png": "/webdev_assignment_2/static/media/biggrin.bb430eddba56a9c82765.png",
     "index.html": "/webdev_assignment_2/index.html",
     "main.2333d2f5.css.map": "/webdev_assignment_2/static/css/main.2333d2f5.css.map",
-    "main.e3bea7fc.js.map": "/webdev_assignment_2/static/js/main.e3bea7fc.js.map"
+    "main.57ef06f5.js.map": "/webdev_assignment_2/static/js/main.57ef06f5.js.map"
   },
   "entrypoints": [
     "static/css/main.2333d2f5.css",
-    "static/js/main.e3bea7fc.js"
+    "static/js/main.57ef06f5.js"
   ]
 }
