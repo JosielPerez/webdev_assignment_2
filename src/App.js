@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import BigGrin from "./assets/biggrin.png";
+import BlackOut from "./assets/blackout.png";
+import Frost from "./assets/frost.png";
+import MetalMask from "./assets/metal-facemask.png";
+import Punisher from "./assets/punisher.png";
+import WhiteOut from "./assets/whiteout.png";
 import SCard from "./components/SCard";
 
 const cardImages = [
-  { src: "/images/biggrin.png", matched: false },
-  { src: "/images/blackout.png", matched: false },
-  { src: "/images/frost.png", matched: false },
-  { src: "/images/metal-facemask.png", matched: false },
-  { src: "/images/punisher.png", matched: false },
-  { src: "/images/whiteout.png", matched: false },
+  { src: BigGrin, matched: false },
+  { src: BlackOut, matched: false },
+  { src: Frost, matched: false },
+  { src: MetalMask, matched: false },
+  { src: Punisher, matched: false },
+  { src: WhiteOut, matched: false },
 ];
 
 function App() {
